@@ -16,5 +16,28 @@ namespace Csharp_Hotel_System
         {
             InitializeComponent();
         }
+
+        private void Main_Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void manageClientsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageClientsForm manageCF = new ManageClientsForm();
+            manageCF.ShowDialog();
+        }
+
+        private void manageReservationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageReservationsForm manageRSCF = new ManageReservationsForm();
+            manageRSCF.ShowDialog();
+        }
+
+        private void manageRoomsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageRoomsForm manageRF = new ManageRoomsForm();
+            manageRF.ShowDialog();
+        }
     }
 }

@@ -32,8 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.UserName = new System.Windows.Forms.Label();
             this.Password = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.UText = new System.Windows.Forms.TextBox();
+            this.PText = new System.Windows.Forms.TextBox();
             this.Login = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -80,24 +80,26 @@
             this.Password.TabIndex = 2;
             this.Password.Text = "Password :";
             // 
-            // textBox1
+            // UText
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox1.Font = new System.Drawing.Font("Segoe Script", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 124);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(266, 39);
-            this.textBox1.TabIndex = 3;
+            this.UText.BackColor = System.Drawing.Color.Gainsboro;
+            this.UText.Font = new System.Drawing.Font("Segoe Script", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UText.Location = new System.Drawing.Point(12, 124);
+            this.UText.Name = "UText";
+            this.UText.Size = new System.Drawing.Size(266, 39);
+            this.UText.TabIndex = 3;
+            this.UText.Text = "admin";
             // 
-            // textBox2
+            // PText
             // 
-            this.textBox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox2.Font = new System.Drawing.Font("Segoe Script", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(12, 215);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(266, 39);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.UseSystemPasswordChar = true;
+            this.PText.BackColor = System.Drawing.Color.Gainsboro;
+            this.PText.Font = new System.Drawing.Font("Segoe Script", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PText.Location = new System.Drawing.Point(12, 215);
+            this.PText.Name = "PText";
+            this.PText.Size = new System.Drawing.Size(266, 39);
+            this.PText.TabIndex = 4;
+            this.PText.Text = "admin";
+            this.PText.UseSystemPasswordChar = true;
             // 
             // Login
             // 
@@ -122,8 +124,8 @@
             this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(290, 335);
             this.Controls.Add(this.Login);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.PText);
+            this.Controls.Add(this.UText);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.UserName);
             this.Controls.Add(this.panel1);
@@ -142,8 +144,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label UserName;
         private System.Windows.Forms.Label Password;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox UText;
+        private System.Windows.Forms.TextBox PText;
         private System.Windows.Forms.Button Login;
     }
 }

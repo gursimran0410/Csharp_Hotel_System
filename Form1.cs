@@ -34,25 +34,37 @@ namespace Csharp_Hotel_System
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             MySqlCommand command = new MySqlCommand();
-            String query = "SELECT * FROM `user` WHERE `username`=@usn AND `password`=@pass";
+            String query = "SELECT * FROM `user` WHERE `username`= @usn AND `password`= @pass";
 
             command.CommandText = query;
             command.Connection = conn.GetConnection();
 
-            command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = UserName.Text;
-            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = Password.Text;
-
+            command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = UText.Text;
+            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = PText.Text;
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
-            if(table.Rows.Count>0)
+            if (table.Rows.Count > 0)
             {
-                MessageBox.Show("Yes");
+                this.Hide();
+                Main_Form mform = new Main_Form();
+                mform.Show();
             }
             else
             {
-                MessageBox.Show("No");
+                if (UText.Text.Trim().Equals(""))
+                {
+                    MessageBox.Show("Enter your Username to login", "Empty Username", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (PText.Text.Trim().Equals(""))
+                {
+                    MessageBox.Show("Enter your Password to login", "Empty Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Enter Correct Username OR Password", "Credentials Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }
