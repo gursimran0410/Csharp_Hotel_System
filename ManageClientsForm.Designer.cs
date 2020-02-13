@@ -85,6 +85,7 @@
             this.Edit.TabIndex = 7;
             this.Edit.Text = "Edit";
             this.Edit.UseVisualStyleBackColor = true;
+            this.Edit.Click += new System.EventHandler(this.Edit_Click);
             // 
             // Remove
             // 
@@ -95,6 +96,7 @@
             this.Remove.TabIndex = 6;
             this.Remove.Text = "Remove";
             this.Remove.UseVisualStyleBackColor = true;
+            this.Remove.Click += new System.EventHandler(this.Remove_Click);
             // 
             // ClearFields
             // 
@@ -128,6 +130,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(510, 359);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // CountryText
             // 
@@ -206,6 +209,7 @@
             this.IDText.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDText.Location = new System.Drawing.Point(124, 113);
             this.IDText.Name = "IDText";
+            this.IDText.ReadOnly = true;
             this.IDText.Size = new System.Drawing.Size(204, 26);
             this.IDText.TabIndex = 2;
             // 

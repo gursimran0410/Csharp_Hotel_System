@@ -57,5 +57,83 @@ namespace Csharp_Hotel_System
         {
             dataGridView1.DataSource = client.getclients();
         }
+
+        private void Edit_Click(object sender, EventArgs e)
+        {
+            int id;
+            String fname = FNText.Text;
+            String lname = LNText.Text;
+            String phone = PhoneText.Text;
+            String country = CountryText.Text;
+
+            try
+            {
+                id = Convert.ToInt32(IDText.Text);
+                if (fname.Trim().Equals("") || lname.Trim().Equals("") || phone.Trim().Equals("") || country.Trim().Equals(""))
+                {
+                    MessageBox.Show("Error - New Client Not Edit Successfully", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    Boolean EditClient = client.EditClient(id, fname, lname, phone, country);
+                    if (EditClient)
+                    {
+                        dataGridView1.DataSource = client.getclients();
+                        MessageBox.Show("New Client Edited Successfully", "Edit Client", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error - New Client Not edited Successfully", "Client Edit", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch(Exception exe)
+            {
+                MessageBox.Show(exe.Message, "ID Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            IDText.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            FNText.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            LNText.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            PhoneText.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            CountryText.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+        }
+
+        private void Remove_Click(object sender, EventArgs e)
+        {
+            int id;
+            String fname = FNText.Text;
+            String lname = LNText.Text;
+            String phone = PhoneText.Text;
+            String country = CountryText.Text;
+
+            try
+            {
+                id = Convert.ToInt32(IDText.Text);
+                if (fname.Trim().Equals("") || lname.Trim().Equals("") || phone.Trim().Equals("") || country.Trim().Equals(""))
+                {
+                    MessageBox.Show("Error - New Client Not Edit Successfully", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    Boolean EditClient = client.removeClient(id);
+                    if (EditClient)
+                    {
+                        dataGridView1.DataSource = client.getclients();
+                        MessageBox.Show("Client Removed Successfully", "Remove Client", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearFields.PerformClick();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error - Client Not Removed Successfully", "Client Removed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }catch(Exception exe)
+            {
+                MessageBox.Show(exe.Message, "ID Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
