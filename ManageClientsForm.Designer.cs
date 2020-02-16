@@ -96,7 +96,6 @@
             this.Remove.TabIndex = 6;
             this.Remove.Text = "Remove";
             this.Remove.UseVisualStyleBackColor = true;
-            this.Remove.Click += new System.EventHandler(this.Remove_Click);
             // 
             // ClearFields
             // 
@@ -209,7 +208,6 @@
             this.IDText.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDText.Location = new System.Drawing.Point(124, 113);
             this.IDText.Name = "IDText";
-            this.IDText.ReadOnly = true;
             this.IDText.Size = new System.Drawing.Size(204, 26);
             this.IDText.TabIndex = 2;
             // 

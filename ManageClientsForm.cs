@@ -103,37 +103,7 @@ namespace Csharp_Hotel_System
 
         private void Remove_Click(object sender, EventArgs e)
         {
-            int id;
-            String fname = FNText.Text;
-            String lname = LNText.Text;
-            String phone = PhoneText.Text;
-            String country = CountryText.Text;
 
-            try
-            {
-                id = Convert.ToInt32(IDText.Text);
-                if (fname.Trim().Equals("") || lname.Trim().Equals("") || phone.Trim().Equals("") || country.Trim().Equals(""))
-                {
-                    MessageBox.Show("Error - New Client Not Edit Successfully", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    Boolean EditClient = client.removeClient(id);
-                    if (EditClient)
-                    {
-                        dataGridView1.DataSource = client.getclients();
-                        MessageBox.Show("Client Removed Successfully", "Remove Client", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ClearFields.PerformClick();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error - Client Not Removed Successfully", "Client Removed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }catch(Exception exe)
-            {
-                MessageBox.Show(exe.Message, "ID Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
     }
 }
